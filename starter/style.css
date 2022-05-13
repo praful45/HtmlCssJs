@@ -1,0 +1,47 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.parent {
+  background-color: rgb(70, 182, 227);
+  padding: 10px;
+  height: 150vh;
+  position: relative;
+}
+
+.child-one {
+  background-color: rgb(91, 200, 91);
+  padding: 10px;
+  position: relative;
+  left: 0px;
+}
+
+.child-two {
+  background-color: rgb(196, 243, 26);
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.child-three {
+  background-color: rgb(244, 112, 134);
+  padding: 10px;
+  position: fixed;
+  top: 25%;
+}
+
+.child-four {
+  background-color: rgb(238, 234, 234);
+  padding: 10px;
+  position: sticky;
+  top: 0;
+}
+
+/* Relative - relative to parent and relative to itself
+   Absolute -Absolute positioning takes elements out of the 
+            regular document flow while also affecting the layout of the other elements on the page.
+   fixed  - fixed to certain postion
+   sticky - feature of relative and fixed
+*/
