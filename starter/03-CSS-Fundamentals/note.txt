@@ -1,0 +1,6 @@
+Priority....
+4)Inline Style(style attribute in HTML)
+3) #ID Selector(#)
+2) Class Selector(.)
+1) Element Selector(p,div,li,etc)
+0) Universal Selector(*)
