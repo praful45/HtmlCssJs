@@ -1,0 +1,30 @@
+body {
+  border: 5px solid black;
+  color: rgb(47, 47, 47);
+}
+
+.heading {
+  text-align: center;
+  background-color: aliceblue;
+}
+
+.price {
+  font-style: bold;
+  font-weight: 900;
+}
+
+.more {
+  color: black;
+}
+
+.list {
+  list-style: square;
+}
+
+.cart-btn {
+  color: white;
+  background-color: black;
+  padding: 5px;
+  border-radius: 1px;
+  text-align: center;
+}
