@@ -6,6 +6,7 @@ body {
 .heading {
   text-align: center;
   background-color: aliceblue;
+  text-transform: uppercase;
 }
 
 .price {
@@ -13,8 +14,24 @@ body {
   font-weight: 900;
 }
 
-.more {
+.shipping {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #777;
+}
+
+.more:link,
+.more:visited {
   color: black;
+}
+.more:hover,
+.more:active {
+  text-decoration: none;
+}
+
+.details-title {
+  text-transform: uppercase;
 }
 
 .list {
@@ -25,6 +42,14 @@ body {
   color: white;
   background-color: black;
   padding: 5px;
+  border: none;
   border-radius: 1px;
   text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cart-btn:hover {
+  color: black;
+  background-color: rgb(240, 240, 15);
 }
