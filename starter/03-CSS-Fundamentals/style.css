@@ -40,6 +40,7 @@ p,
 li {
   font-family: sans-serif;
   color: #444;
+  /* display: inline; */
 }
 
 h1,
@@ -74,6 +75,7 @@ p {
   font-size: 22px;
   line-height: 1.5;
   margin-bottom: 15px;
+  /* display: inline; */
 }
 
 ul,
@@ -184,6 +186,20 @@ a:active {
 .post-img {
   width: 100%;
   height: auto;
+}
+
+nav a:link {
+  /* background-color: #363c3d;
+  margin: 20px;
+  padding: 20px;
+  display: block; */
+  margin-right: 30px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
 }
 
 /* resolving conflict */
