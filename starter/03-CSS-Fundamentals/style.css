@@ -8,6 +8,7 @@ body {
   color: #444;
   font-family: sans-serif;
   border-top: 10px solid #1098ad;
+  position: relative;
 }
 
 .container {
@@ -15,6 +16,7 @@ body {
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto;
+  position: relative;
 }
 
 .main-header {
@@ -126,6 +128,7 @@ footer p {
 
 .post-header {
   margin-bottom: 40px;
+  position: relative;
 }
 
 aside {
@@ -200,6 +203,22 @@ nav a:link {
 
 nav a:link:last-child {
   margin-right: 0;
+}
+.live-btn {
+  position: relative;
+}
+
+button {
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
 
 /* resolving conflict */
