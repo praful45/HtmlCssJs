@@ -4,3 +4,11 @@ Priority....
 2) Class Selector(.)
 1) Element Selector(p,div,li,etc)
 0) Universal Selector(*)
+
+
+part-(40)=>Googling and Reading Documentation Skills
+
+
+## Debugging Skills
+--HTML Validator
+--
