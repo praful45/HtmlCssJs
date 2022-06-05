@@ -12,3 +12,9 @@ part-(40)=>Googling and Reading Documentation Skills
 ## Debugging Skills
 --HTML Validator
 --
+
+///
+The !important rule in CSS is used to add more importance to a property/value than normal.
+In fact, if you use the !important rule, it will override ALL previous styling rules for that specific property on that element!
+example:
+ background-color: #f44336 !important;
