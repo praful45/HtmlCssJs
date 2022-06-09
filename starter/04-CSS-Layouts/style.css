@@ -19,6 +19,28 @@ body {
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto;
+
+  /* Flex-box */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+/* .el {
+  margin-right: 30px;
+} */
+
+.el--1 {
+  align-self: flex-start;
+}
+
+.el--5 {
+  align-self: stretch;
+}
+
+.el--6 {
+  order: -1;
 }
 
 .main-header {
