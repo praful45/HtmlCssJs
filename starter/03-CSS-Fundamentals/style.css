@@ -22,7 +22,7 @@ body {
 .main-header {
   background-color: #f7f7f7;
   padding: 20px 40px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   height: 80px;
 }
 
@@ -32,7 +32,7 @@ nav {
 }
 
 article {
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 
 h1,
@@ -97,7 +97,7 @@ li:last-child {
 }
 
 .rel-aside {
-  width: 600px;
+  width: 300px;
   /* margin: auto auto; */
 }
 /* 
@@ -317,7 +317,7 @@ footer p {
   font-style: italic;
 }
 
-.row {
+/* .row {
   display: flex;
   gap: 75px;
   margin-bottom: 60px;
@@ -330,11 +330,36 @@ article {
 }
 
 aside {
-  /* 
+  
 Defaults
 flex-grow:0;
 flex-shrink:1;
 flex-basis:auto
-*/
+
   flex: 0 0 300px;
+} */
+
+/* CSS GRID Layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+.main-header {
+  grid-column: 1 / -1;
+}
+
+.rel-aside ul {
+  padding: 50px;
+}
+
+article {
+}
+aside {
+}
+
+footer {
+  grid-column: 1/-1;
 }
