@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <section class="sidebar-container">
+            <div class="sidebar-container-content">
+                <header>
+                    <h1>Let's Register</h1>
+                </header>
+                <div>
+                    <img class="side-img" src="https://bit.ly/3yglBvw" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="content">
+            <div class="auth-content">
+                <h2>Sign Up to CoseFan</h2>
+                <div class="form-content">
+                    <form #loginForm="ngForm">
+                        <div class="mat-form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input name="firstName" #firstName="ngModel" matInput placeholder="Enter here"
+                                    required="true" [(ngModel)]="model.firstName" [maxlength]="50">
+                            </mat-form-field>
+                        </div>
+                        <div class="mat-form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Middle Name</mat-label>
+                                <input name="middleName" #middleName="ngModel" matInput placeholder="Enter here"
+                                    [(ngModel)]="model.middleName" [maxlength]="50">
+                                <mat-error class="val-error-list"
+                                    *ngIf="(loginForm.submitted || middleName.touched) && middleName.errors?.maxlength">
+                                    Middle name must be less than 50 characters.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="mat-form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Last Name</mat-label>
+                                <input name="lastName" #lastName="ngModel" matInput placeholder="Enter here"
+                                    required="true" [(ngModel)]="model.lastName" [maxlength]="50">
+                                <mat-error *ngIf="(loginForm.submitted || lastName.touched) &&  lastName.invalid">Last
+                                    name is required.</mat-error>
+                                <mat-error
+                                    *ngIf="(loginForm.submitted || lastName.touched) && lastName.errors?.maxlength">Last
+                                    name must be less than 50 characters.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="mat-form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Role</mat-label>
+                                <mat-select name="role" #role="ngModel" required="true" [(ngModel)]="model.roleId">
+                                    <mat-option *ngFor="let item of roles" [value]="item.id">{{item.displayName}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="(loginForm.submitted || role.touched) &&  role.invalid">Role is
+                                    required.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <ng-container *ngIf="model.roleId == 3">
+                            <div class="mat-form-group">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Store Name</mat-label>
+                                    <input name="sotreName" #sotreName="ngModel" matInput placeholder="Enter here"
+                                        required="true" [(ngModel)]="model.store!.name" [maxlength]="200">
+                                    <mat-error *ngIf="(loginForm.submitted || sotreName.touched) && sotreName.invalid">
+                                        Store name is required.</mat-error>
+                                    <mat-error
+                                        *ngIf="(loginForm.submitted || sotreName.touched) && sotreName.errors?.maxlength">
+                                        Store name must be less than 200 characters.</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="mat-form-group">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Minimum Promotion Price</mat-label>
+                                    <input name="minimumPromotionPrice" #minimumPromotionPrice="ngModel" matInput
+                                        placeholder="Enter here" [(ngModel)]="model.store!.minimumPromotionPrice"
+                                        type="number" min="0">
+                                </mat-form-field>
+                            </div>
+                            <div class="mat-form-group">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Promotion Delivery Price</mat-label>
+                                    <input name="promotionDeliveryPrice" #promotionDeliveryPrice="ngModel" matInput
+                                        placeholder="Enter here" [(ngModel)]="model.store!.promotionDeliveryPrice"
+                                        type="number" min="0">
+                                </mat-form-field>
+                            </div>
+                        </ng-container>
+                        <div class="mat-form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input name="email" #email="ngModel" required="true" matInput placeholder="Enter here"
+                                    [(ngModel)]="model.email" email>
+                                <mat-error *ngIf="(loginForm.submitted || email.touched) &&  email.invalid">Valid email
+                                    is required.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="mat-form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input name="username" #username="ngModel" required="true" matInput
+                                    placeholder="Enter here" [(ngModel)]="model.username">
+                                <mat-error *ngIf="(loginForm.submitted || username.touched) &&  username.invalid">
+                                    Username is required.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="mat-form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input name="password" #password="ngModel" required="true" matInput
+                                    placeholder="Enter here" [(ngModel)]="model.password">
+                                <mat-error *ngIf="(loginForm.submitted || password.touched) &&  password.invalid">
+                                    Password is required.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="mat-form-group">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Description</mat-label>
+                                <textarea name="Description" matInput [(ngModel)]="model.description"
+                                    cdkTextareaAutosize [cdkAutosizeMinRows]="10"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="error-box">
+                            <ng-container *ngIf="hasError">
+                                <p class="val-error-list" *ngFor="let item of validationMessages">{{ item }}</p>
+                            </ng-container>
+                            <ng-container *ngIf="isSuccessfull">
+                                <p class="val-success-list">Successfully registered. You will be redirected to login
+                                    screen in few seconds.</p>
+                            </ng-container>
+                        </div>
+                        <div class="signin-container">
+                            <button class="fg-white bg-primary cfw-btn" [disabled]="isProcessing" type="submit">
+                                {{ !isProcessing ? 'Sign Up':'Signing Up ......' }}
+                            </button>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <!-- <div class="form-container">
+            <div>
+                <input type="text" placeholder="username or email" />
+                <input type="password" placeholder="password">
+            </div>
+        </div> -->
+    </div>
+</body>
+
+</html>
